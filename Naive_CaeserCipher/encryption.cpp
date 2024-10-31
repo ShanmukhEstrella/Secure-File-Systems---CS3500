@@ -8,19 +8,19 @@ bool performCaesarCipher(string& content, bool encrypt)
 	int shift;
 	if(encrypt == true)
 	{
-		shift = 3;
+	   shift = 3;
 	}
 	else
 	{
-		shift = -3;
+	   shift = -3;
 	}
 	for(char& ch : content)
 	{
-		if(isalpha(ch))
-		{
-			char base = isupper(ch) ? 'A' : 'a'; //ternary operator '?'
-			ch = ((ch - base + shift + 26) % 26) + base;
-		}
+	   if(isalpha(ch))
+	   {
+		char base = isupper(ch) ? 'A' : 'a'; //ternary operator '?'
+		ch = ((ch - base + shift + 26) % 26) + base;
+	   }
 	}
 	return true;
 }
@@ -29,7 +29,7 @@ bool encryptFile(const string& filename, bool encrypt)
 	ifstream infile(filename);
 	if(!infile)
 	{
-		return false;
+	    return false;
 	}
 
 	//Read the contents of the file
